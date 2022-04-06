@@ -8,6 +8,7 @@ import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.Rio;
 import ru.mpei.cimmaintainer.catalog.Catalog;
 import ru.mpei.cimmaintainer.dto.Element;
+import ru.mpei.cimmaintainer.dto.Link;
 import ru.mpei.cimmaintainer.dto.SingleLineDiagram;
 import ru.mpei.cimmaintainer.writer.RdfWriter;
 
@@ -42,6 +43,16 @@ public class SldToCimConverter {
         sld.getElements().forEach(this::convertElementToRdfResource);
     }
 
+//    public void connectApply(SingleLineDiagram sld) {
+//        List<Element> elements = sld.getElements();
+//        List<Link> links = sld.getLinks();
+//
+//        elements = elements.stream().filter(element -> !element.getType().equals("connectivity"))
+//                .collect(Collectors.toList());
+//
+//
+//    }
+
     public void build(SingleLineDiagram sld) {
         List<String> levelWires = Arrays.asList("HV", "MV", "LV");
         List<Element> transformers = sld.getElements().stream()
@@ -52,7 +63,6 @@ public class SldToCimConverter {
                 .map(Element::getVoltageLevel)
                 .distinct()
                 .collect(Collectors.toList());
-
         for (String level :
                 levels) {
             Element element = new Element();
@@ -60,28 +70,32 @@ public class SldToCimConverter {
             element.setVoltageLevel(level);
             element.setOperationName("BaseVoltage");
             element.setProjectName("BaseVoltage");
-            modelBuilder.subject("cim:" + catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
-                    .add("cim:IdentifiedObject.mRID", catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
+            modelBuilder.subject("cim:" + catalog.getVoltageLevelDirectory()
+                            .get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
+                    .add("cim:IdentifiedObject.mRID", catalog.getVoltageLevelDirectory()
+                            .get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
                     .add(RDF.TYPE, "cim:" + element.getProjectName())
-                    .add("cim:IdentifiedObject.name", catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru"))
-                    .add("cim:BaseVoltage.nominalVoltage", catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru").replace("кВ", ""));
-
+                    .add("cim:IdentifiedObject.name", catalog.getVoltageLevelDirectory()
+                            .get(element.getVoltageLevel()).get("ru"))
+                    .add("cim:BaseVoltage.nominalVoltage", catalog.getVoltageLevelDirectory()
+                            .get(element.getVoltageLevel()).get("ru").replace("кВ", ""));
         }
-
-        List<Integer> lev = levels.stream().map(Integer::parseInt).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        List<Integer> lev = levels.stream().map(Integer::parseInt)
+                .sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         for (Integer Voltage :
                 lev) {
             Element element = new Element();
             element.setVoltageLevel(Voltage.toString());
-            element.setId("vl_" + catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru").replace("кВ", ""));
+            element.setId("vl_" + catalog.getVoltageLevelDirectory().get(element.getVoltageLevel())
+                    .get("ru").replace("кВ", ""));
             element.setOperationName("VoltageLevel");
             element.setProjectName("VoltageLevel");
             modelBuilder.subject("cim:" + element.getId())
                     .add("cim:IdentifiedObject.mRID", element.getId())
-                    .add("cim:VoltageLevel.BaseVoltage", "cim:" + catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
+                    .add("cim:VoltageLevel.BaseVoltage", "cim:" + catalog.getVoltageLevelDirectory()
+                            .get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
                     .add(RDF.TYPE, "cim:" + element.getProjectName());
         }
-
         for (Element tr :
                 transformers) {
             for (Integer volt :
@@ -91,11 +105,13 @@ public class SldToCimConverter {
                 element.setId("PTE_" + tr.getProjectName() + "_" + levelWires.get(lev.indexOf(volt)));
                 element.setProjectName("PowerTransformerEnd");
                 modelBuilder.subject("cim:" + element.getId())
-                        .add("cim:TransformerEnd.BaseVoltage", "cim:" + catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
+                        .add("cim:TransformerEnd.BaseVoltage", "cim:" + catalog.getVoltageLevelDirectory()
+                                .get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
                         .add("cim:PowerTransformerEnd.PowerTransformer", "cim:" + tr.getProjectName())
                         .add("cim:TransformerEnd.endNumber", lev.indexOf(volt))
                         .add("cim:IdentifiedObject.mRID", element.getId())
-                        .add("cim:PowerTransformerEnd.ratedU", catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
+                        .add("cim:PowerTransformerEnd.ratedU", catalog.getVoltageLevelDirectory()
+                                .get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
                         .add(RDF.TYPE, "cim:" + element.getProjectName());
             }
         }
@@ -107,8 +123,10 @@ public class SldToCimConverter {
         modelBuilder
                 .subject("cim:" + element.getId())
                 .add("cim:IdentifiedObject.mRID", element.getId())
-                .add("cim:ConductingEquipment.BaseVoltage", "cim:" + catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
-                .add("cim:Equipment.EquipmentContainer", "cim:" + "vl_" + catalog.getVoltageLevelDirectory().get(element.getVoltageLevel()).get("ru").replace("кВ", ""));
+                .add("cim:ConductingEquipment.BaseVoltage", "cim:" + catalog.getVoltageLevelDirectory()
+                        .get(element.getVoltageLevel()).get("ru").replace("кВ", ""))
+                .add("cim:Equipment.EquipmentContainer", "cim:" + "vl_" + catalog.getVoltageLevelDirectory()
+                        .get(element.getVoltageLevel()).get("ru").replace("кВ", ""));
         if (element.getType().equals("directory")) {
             modelBuilder
                     .add(RDF.TYPE, "cim:".concat(catalog.getDeviceDirectory().get(element.getDirectoryEntryId())));
