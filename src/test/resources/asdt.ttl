@@ -1,0 +1,2037 @@
+@base <http://iec.ch/TC57/2013/CIM-schema-cim16#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cim:110 a cim:BaseVoltage;
+  cim:IdentifiedObject.mRID "110";
+  cim:IdentifiedObject.name "110кВ";
+  cim:BaseVoltage.nominalVoltage "110" .
+
+cim:10 a cim:BaseVoltage;
+  cim:IdentifiedObject.mRID "10";
+  cim:IdentifiedObject.name "10кВ";
+  cim:BaseVoltage.nominalVoltage "10" .
+
+cim:35 a cim:BaseVoltage;
+  cim:IdentifiedObject.mRID "35";
+  cim:IdentifiedObject.name "35кВ";
+  cim:BaseVoltage.nominalVoltage "35" .
+
+cim:vl_110 a cim:VoltageLevel;
+  cim:IdentifiedObject.mRID "vl_110";
+  cim:VoltageLevel.BaseVoltage cim:110 .
+
+cim:vl_35 a cim:VoltageLevel;
+  cim:IdentifiedObject.mRID "vl_35";
+  cim:VoltageLevel.BaseVoltage cim:35 .
+
+cim:vl_10 a cim:VoltageLevel;
+  cim:IdentifiedObject.mRID "vl_10";
+  cim:VoltageLevel.BaseVoltage cim:10 .
+
+cim:PTE_T1_HV a cim:PowerTransformerEnd;
+  cim:TransformerEnd.BaseVoltage cim:110;
+  cim:PowerTransformerEnd.PowerTransformer cim:T1;
+  cim:TransformerEnd.endNumber "0"^^xsd:int;
+  cim:IdentifiedObject.mRID "PTE_T1_HV";
+  cim:PowerTransformerEnd.ratedU "110" .
+
+cim:PTE_T1_MV a cim:PowerTransformerEnd;
+  cim:TransformerEnd.BaseVoltage cim:35;
+  cim:PowerTransformerEnd.PowerTransformer cim:T1;
+  cim:TransformerEnd.endNumber "1"^^xsd:int;
+  cim:IdentifiedObject.mRID "PTE_T1_MV";
+  cim:PowerTransformerEnd.ratedU "35" .
+
+cim:PTE_T1_LV a cim:PowerTransformerEnd;
+  cim:TransformerEnd.BaseVoltage cim:10;
+  cim:PowerTransformerEnd.PowerTransformer cim:T1;
+  cim:TransformerEnd.endNumber "2"^^xsd:int;
+  cim:IdentifiedObject.mRID "PTE_T1_LV";
+  cim:PowerTransformerEnd.ratedU "10" .
+
+cim:PTE_T2_HV a cim:PowerTransformerEnd;
+  cim:TransformerEnd.BaseVoltage cim:110;
+  cim:PowerTransformerEnd.PowerTransformer cim:T2;
+  cim:TransformerEnd.endNumber "0"^^xsd:int;
+  cim:IdentifiedObject.mRID "PTE_T2_HV";
+  cim:PowerTransformerEnd.ratedU "110" .
+
+cim:PTE_T2_MV a cim:PowerTransformerEnd;
+  cim:TransformerEnd.BaseVoltage cim:35;
+  cim:PowerTransformerEnd.PowerTransformer cim:T2;
+  cim:TransformerEnd.endNumber "1"^^xsd:int;
+  cim:IdentifiedObject.mRID "PTE_T2_MV";
+  cim:PowerTransformerEnd.ratedU "35" .
+
+cim:PTE_T2_LV a cim:PowerTransformerEnd;
+  cim:TransformerEnd.BaseVoltage cim:10;
+  cim:PowerTransformerEnd.PowerTransformer cim:T2;
+  cim:TransformerEnd.endNumber "2"^^xsd:int;
+  cim:IdentifiedObject.mRID "PTE_T2_LV";
+  cim:PowerTransformerEnd.ratedU "10" .
+
+cim:d6621020-c02d-424e-a067-695c0dcafe77 a cim:OverheadTransmissionLine;
+  cim:IdentifiedObject.mRID "d6621020-c02d-424e-a067-695c0dcafe77";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "W1G" .
+
+cim:5f2f3f4c-68b7-4990-a572-1ea8045d94e8 a cim:RfFilter;
+  cim:IdentifiedObject.mRID "5f2f3f4c-68b7-4990-a572-1ea8045d94e8";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS1" .
+
+cim:ba631fa3-acb8-44c5-a0a8-15a9bc1c3b9f a cim:WaveTrap;
+  cim:IdentifiedObject.mRID "ba631fa3-acb8-44c5-a0a8-15a9bc1c3b9f";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS2" .
+
+cim:921375c7-6156-44a6-b9f4-f391cf885476 a cim:CouplingCapacitor;
+  cim:IdentifiedObject.mRID "921375c7-6156-44a6-b9f4-f391cf885476";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS3" .
+
+cim:ad9c6140-89b7-4edf-9041-158e2c0cd5e2 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "ad9c6140-89b7-4edf-9041-158e2c0cd5e2";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS4" .
+
+cim:7ce9fba0-1bc8-4240-84f6-2ee6beb68f54 a cim:connectivity;
+  cim:IdentifiedObject.mRID "7ce9fba0-1bc8-4240-84f6-2ee6beb68f54";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110 .
+
+cim:d45146b7-5112-47a5-a50f-aba9ee1e26da a cim:connectivity;
+  cim:IdentifiedObject.mRID "d45146b7-5112-47a5-a50f-aba9ee1e26da";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110 .
+
+cim:604352bd-d722-4879-8045-7ee83bb27f95 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "604352bd-d722-4879-8045-7ee83bb27f95";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS5" .
+
+cim:75a44249-4655-4481-b0d3-1daf65f931f4 a cim:Disconnector;
+  cim:IdentifiedObject.mRID "75a44249-4655-4481-b0d3-1daf65f931f4";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS6" .
+
+cim:a552800b-9cd3-4380-8b06-33f4db300c68 a cim:connectivity;
+  cim:IdentifiedObject.mRID "a552800b-9cd3-4380-8b06-33f4db300c68";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110 .
+
+cim:77d751eb-123a-4539-956d-77dac5775ed6 a cim:bus;
+  cim:IdentifiedObject.mRID "77d751eb-123a-4539-956d-77dac5775ed6";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "Bus1G" .
+
+cim:71cc80eb-5bdc-4566-892b-10204b8e1464 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "71cc80eb-5bdc-4566-892b-10204b8e1464";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS7" .
+
+cim:39857ef0-95b0-4347-8f17-d3f3f36cfb0d a cim:FourWindingVoltageTransformer;
+  cim:IdentifiedObject.mRID "39857ef0-95b0-4347-8f17-d3f3f36cfb0d";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "VTR1" .
+
+cim:7db5d118-e6d5-43bb-ba8e-af70d077f4ea a cim:Disconnector;
+  cim:IdentifiedObject.mRID "7db5d118-e6d5-43bb-ba8e-af70d077f4ea";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS8" .
+
+cim:836be534-c5c2-4ac5-922b-9863c86c063d a cim:OverheadTransmissionLine;
+  cim:IdentifiedObject.mRID "836be534-c5c2-4ac5-922b-9863c86c063d";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "W2G" .
+
+cim:37eece54-838b-4d63-b9e5-cf543adca2b4 a cim:RfFilter;
+  cim:IdentifiedObject.mRID "37eece54-838b-4d63-b9e5-cf543adca2b4";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS9" .
+
+cim:debff160-e41c-4a36-9a3f-cb5dd0cd0520 a cim:WaveTrap;
+  cim:IdentifiedObject.mRID "debff160-e41c-4a36-9a3f-cb5dd0cd0520";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS10" .
+
+cim:a776be8b-3c0e-4bbf-a884-a831f137d9c2 a cim:CouplingCapacitor;
+  cim:IdentifiedObject.mRID "a776be8b-3c0e-4bbf-a884-a831f137d9c2";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS11" .
+
+cim:609f7f9e-e0c2-4f34-98f0-b697befabe97 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "609f7f9e-e0c2-4f34-98f0-b697befabe97";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS12" .
+
+cim:19e35955-65df-44e1-9b28-3f393b18f0a1 a cim:connectivity;
+  cim:IdentifiedObject.mRID "19e35955-65df-44e1-9b28-3f393b18f0a1";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110 .
+
+cim:5df20c1e-992c-49b0-b46e-c053aa27fdf0 a cim:connectivity;
+  cim:IdentifiedObject.mRID "5df20c1e-992c-49b0-b46e-c053aa27fdf0";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110 .
+
+cim:652f6901-6067-4157-af23-a3f10bc3b6ef a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "652f6901-6067-4157-af23-a3f10bc3b6ef";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS13" .
+
+cim:86cc00d2-905b-4559-b7ce-ee228bd618a2 a cim:Disconnector;
+  cim:IdentifiedObject.mRID "86cc00d2-905b-4559-b7ce-ee228bd618a2";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS14" .
+
+cim:af23e2de-0b3b-44d0-bbc1-62a9bbeae6c8 a cim:connectivity;
+  cim:IdentifiedObject.mRID "af23e2de-0b3b-44d0-bbc1-62a9bbeae6c8";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110 .
+
+cim:6acbfe80-bd80-4cb5-8fad-b209732c6cc6 a cim:bus;
+  cim:IdentifiedObject.mRID "6acbfe80-bd80-4cb5-8fad-b209732c6cc6";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "Bus2G" .
+
+cim:e4df248d-ecd3-472f-8782-816d76ac09a4 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "e4df248d-ecd3-472f-8782-816d76ac09a4";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS15" .
+
+cim:2b950a05-4791-408b-be1f-3fd644716cab a cim:FourWindingVoltageTransformer;
+  cim:IdentifiedObject.mRID "2b950a05-4791-408b-be1f-3fd644716cab";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "VTR2" .
+
+cim:bd655044-f6b6-4019-aa07-6ce9773fc8fd a cim:Disconnector;
+  cim:IdentifiedObject.mRID "bd655044-f6b6-4019-aa07-6ce9773fc8fd";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS16" .
+
+cim:cfba0410-cf28-408e-be7a-025a61c9296c a cim:Disconnector;
+  cim:IdentifiedObject.mRID "cfba0410-cf28-408e-be7a-025a61c9296c";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS17" .
+
+cim:7582de4d-2613-462e-85be-25fbddedac24 a cim:Breaker;
+  cim:IdentifiedObject.mRID "7582de4d-2613-462e-85be-25fbddedac24";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "QC1G" .
+
+cim:c1c73385-3d3f-4b88-b259-6410aa40ac99 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "c1c73385-3d3f-4b88-b259-6410aa40ac99";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "TA1" .
+
+cim:3b7cb062-53f7-4c73-9021-ea91a4eacb6f a cim:Disconnector;
+  cim:IdentifiedObject.mRID "3b7cb062-53f7-4c73-9021-ea91a4eacb6f";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS18" .
+
+cim:cfe733a9-7f9a-47a4-b005-eaf1c1d5f810 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "cfe733a9-7f9a-47a4-b005-eaf1c1d5f810";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "TA2" .
+
+cim:bbb1cb30-263a-438a-83d2-f2dd44e6a7d1 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "bbb1cb30-263a-438a-83d2-f2dd44e6a7d1";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "TA3" .
+
+cim:a3043a9c-1985-46b4-bc5a-f7d309a32b4b a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "a3043a9c-1985-46b4-bc5a-f7d309a32b4b";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "TA4" .
+
+cim:78f9b9b8-559f-4244-adf3-f0062202d2bf a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "78f9b9b8-559f-4244-adf3-f0062202d2bf";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "TA5" .
+
+cim:f7b826b5-133b-4082-a76d-5d1af80f70de a cim:Disconnector;
+  cim:IdentifiedObject.mRID "f7b826b5-133b-4082-a76d-5d1af80f70de";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS19" .
+
+cim:62dd5a7b-2646-4b67-a30c-cbdeb7be532d a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "62dd5a7b-2646-4b67-a30c-cbdeb7be532d";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR1" .
+
+cim:ab5e56a3-b2e6-4238-baec-3a8266040f85 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "ab5e56a3-b2e6-4238-baec-3a8266040f85";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR2" .
+
+cim:2f7ee971-4160-41f8-8a2e-bf71a7fe1c6a a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "2f7ee971-4160-41f8-8a2e-bf71a7fe1c6a";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR3" .
+
+cim:6a8e29f2-04c7-4a3e-89f0-816e25a3e1b2 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "6a8e29f2-04c7-4a3e-89f0-816e25a3e1b2";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR4" .
+
+cim:6ebfda43-1b68-475d-a628-88ae2c7526b3 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "6ebfda43-1b68-475d-a628-88ae2c7526b3";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR5" .
+
+cim:eba9fd81-ad2d-47d4-b258-933b52f07460 a cim:Breaker;
+  cim:IdentifiedObject.mRID "eba9fd81-ad2d-47d4-b258-933b52f07460";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CBR1" .
+
+cim:7ba57e8a-a725-454b-87e2-9aaa588de7ed a cim:Disconnector;
+  cim:IdentifiedObject.mRID "7ba57e8a-a725-454b-87e2-9aaa588de7ed";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS20" .
+
+cim:4349669c-d68b-470e-aabe-b5e492424c2c a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "4349669c-d68b-470e-aabe-b5e492424c2c";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR6" .
+
+cim:033cdf9d-158a-4185-b19d-2d54660bcc0f a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "033cdf9d-158a-4185-b19d-2d54660bcc0f";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR7" .
+
+cim:dbab7329-2dc8-4bac-b71f-4d4d11553986 a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "dbab7329-2dc8-4bac-b71f-4d4d11553986";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "SAR1" .
+
+cim:d7beb57f-9a4f-4fd7-8303-14353d4ec7a9 a cim:connectivity;
+  cim:IdentifiedObject.mRID "d7beb57f-9a4f-4fd7-8303-14353d4ec7a9";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110 .
+
+cim:6b3cd8ce-6ca8-485e-bd44-8c6ccc694d74 a cim:ThreeWindingPowerTransformerWithTapChanger;
+  cim:IdentifiedObject.mRID "6b3cd8ce-6ca8-485e-bd44-8c6ccc694d74";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:ApparentPower "10";
+  cim:IdentifiedObject.name "T1" .
+
+cim:2547587e-2e36-4151-83dc-17e7a1c784b6 a cim:Disconnector;
+  cim:IdentifiedObject.mRID "2547587e-2e36-4151-83dc-17e7a1c784b6";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS21" .
+
+cim:f98219ba-a343-42b3-8108-d36f38424fdc a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "f98219ba-a343-42b3-8108-d36f38424fdc";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR8" .
+
+cim:be49bc2f-0779-41cd-a3a9-0d3bca63dbf9 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "be49bc2f-0779-41cd-a3a9-0d3bca63dbf9";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR9" .
+
+cim:e911c678-af14-4777-8564-c16d339db416 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "e911c678-af14-4777-8564-c16d339db416";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR10" .
+
+cim:873af440-1f73-4235-ae8d-00d012069861 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "873af440-1f73-4235-ae8d-00d012069861";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR11" .
+
+cim:ec4f733d-67c5-461e-be24-6336ba32d201 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "ec4f733d-67c5-461e-be24-6336ba32d201";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR12" .
+
+cim:8d61825a-a0a7-4f2e-8135-b8528bf52f15 a cim:Breaker;
+  cim:IdentifiedObject.mRID "8d61825a-a0a7-4f2e-8135-b8528bf52f15";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CBR2" .
+
+cim:8c208ebf-709d-4b8a-af66-97afd056ffda a cim:Disconnector;
+  cim:IdentifiedObject.mRID "8c208ebf-709d-4b8a-af66-97afd056ffda";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "DIS22" .
+
+cim:94e433da-d396-485d-a120-5d2990576561 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "94e433da-d396-485d-a120-5d2990576561";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR13" .
+
+cim:e59f1005-ba63-435e-ab43-5c3518896ace a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "e59f1005-ba63-435e-ab43-5c3518896ace";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "CTR14" .
+
+cim:40781770-477e-46e4-b417-3624476dc0e6 a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "40781770-477e-46e4-b417-3624476dc0e6";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:IdentifiedObject.name "SAR2" .
+
+cim:1c785ed2-62cb-4d68-b2d4-dd576d9715bd a cim:connectivity;
+  cim:IdentifiedObject.mRID "1c785ed2-62cb-4d68-b2d4-dd576d9715bd";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110 .
+
+cim:5fbac74a-4a63-4779-9caa-41693e17060d a cim:ThreeWindingPowerTransformerWithTapChanger;
+  cim:IdentifiedObject.mRID "5fbac74a-4a63-4779-9caa-41693e17060d";
+  cim:ConductingEquipment.BaseVoltage cim:110;
+  cim:Equipment.EquipmentContainer cim:vl_110;
+  cim:ApparentPower "10";
+  cim:IdentifiedObject.name "T2" .
+
+cim:8515c376-e2be-44ec-bb34-d90c4e4624d4 a cim:bus;
+  cim:IdentifiedObject.mRID "8515c376-e2be-44ec-bb34-d90c4e4624d4";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Bus1K" .
+
+cim:bf2fdd33-f7fa-46d6-9b75-3c715f54c73f a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "bf2fdd33-f7fa-46d6-9b75-3c715f54c73f";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q101" .
+
+cim:08dbfa39-cafe-4efa-87e8-efd76bb44caf a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "08dbfa39-cafe-4efa-87e8-efd76bb44caf";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR15" .
+
+cim:58baead7-4906-4baf-b0c6-1f0c16750d2c a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "58baead7-4906-4baf-b0c6-1f0c16750d2c";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR16" .
+
+cim:1eb8b5a8-734e-4c89-8fac-1c522a3a62c9 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "1eb8b5a8-734e-4c89-8fac-1c522a3a62c9";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR17" .
+
+cim:ff8d6e3b-a397-4185-9e4e-16c39ebe562a a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "ff8d6e3b-a397-4185-9e4e-16c39ebe562a";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR18" .
+
+cim:a8d717b0-6562-49d8-8695-6dc99324e921 a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "a8d717b0-6562-49d8-8695-6dc99324e921";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "SAR3" .
+
+cim:ca4f7c76-83b1-42d6-91b9-e4ee5b42b0d0 a cim:connectivity;
+  cim:IdentifiedObject.mRID "ca4f7c76-83b1-42d6-91b9-e4ee5b42b0d0";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:05197bba-9bbc-4338-9300-7a39fcc9a582 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "05197bba-9bbc-4338-9300-7a39fcc9a582";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS23" .
+
+cim:3483bdb7-a2ba-4c3f-8930-cce5c8f46147 a cim:connectivity;
+  cim:IdentifiedObject.mRID "3483bdb7-a2ba-4c3f-8930-cce5c8f46147";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:24ba0b3f-c156-474d-996c-bafd2a4d27fb a cim:FourWindingVoltageTransformer;
+  cim:IdentifiedObject.mRID "24ba0b3f-c156-474d-996c-bafd2a4d27fb";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "VTR3" .
+
+cim:e3082631-bd92-49a0-ab4c-330506e99171 a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "e3082631-bd92-49a0-ab4c-330506e99171";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "SAR4" .
+
+cim:a5117c59-e319-45d2-9252-e1670d63a19b a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "a5117c59-e319-45d2-9252-e1670d63a19b";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS24" .
+
+cim:ee1c9a52-dbe5-4038-a987-884b82c7102c a cim:ModularSwitchboardWithFuse;
+  cim:IdentifiedObject.mRID "ee1c9a52-dbe5-4038-a987-884b82c7102c";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS25" .
+
+cim:71890994-7b48-44a2-81d2-19853004a0d6 a cim:connectivity;
+  cim:IdentifiedObject.mRID "71890994-7b48-44a2-81d2-19853004a0d6";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:c9e42d6e-7181-4f06-991f-1f15529b33ca a cim:connectivity;
+  cim:IdentifiedObject.mRID "c9e42d6e-7181-4f06-991f-1f15529b33ca";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:3bcc0fd2-1e89-453a-a265-1ce6fe61e6b3 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "3bcc0fd2-1e89-453a-a265-1ce6fe61e6b3";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q103" .
+
+cim:3a3c759f-4647-450d-8414-a8b2eaba93ca a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "3a3c759f-4647-450d-8414-a8b2eaba93ca";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR19" .
+
+cim:cfca4553-da85-4c52-b734-a921184d35b7 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "cfca4553-da85-4c52-b734-a921184d35b7";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR20" .
+
+cim:9b1272a5-a910-44e3-9cc3-c52316407603 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "9b1272a5-a910-44e3-9cc3-c52316407603";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR21" .
+
+cim:a9edc1ae-4ae1-4b1c-9d14-a7a153bbae11 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "a9edc1ae-4ae1-4b1c-9d14-a7a153bbae11";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS26" .
+
+cim:29b56aa2-1441-4a11-9559-dbb784ecb301 a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "29b56aa2-1441-4a11-9559-dbb784ecb301";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR22" .
+
+cim:39f47a02-bf5a-4f2b-b270-483329add086 a cim:connectivity;
+  cim:IdentifiedObject.mRID "39f47a02-bf5a-4f2b-b270-483329add086";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:4cbbc1da-b7a8-49f6-be34-2a0aa49c485f a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "4cbbc1da-b7a8-49f6-be34-2a0aa49c485f";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103" .
+
+cim:038763b9-a7f6-4ba3-8484-3521547db6f2 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "038763b9-a7f6-4ba3-8484-3521547db6f2";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q104" .
+
+cim:8c5417f8-bdb3-4967-ba98-3a4497a7a590 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "8c5417f8-bdb3-4967-ba98-3a4497a7a590";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR23" .
+
+cim:023cb9b0-f0e3-421e-a00a-70c7dba06379 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "023cb9b0-f0e3-421e-a00a-70c7dba06379";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR24" .
+
+cim:187680d8-e341-4ec4-98e4-5ada144ad083 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "187680d8-e341-4ec4-98e4-5ada144ad083";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR25" .
+
+cim:fa166daf-c199-4a0e-b857-bcfa3c0112ad a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "fa166daf-c199-4a0e-b857-bcfa3c0112ad";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS27" .
+
+cim:38171d03-268c-4667-9a83-2d8a9724ef9f a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "38171d03-268c-4667-9a83-2d8a9724ef9f";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR26" .
+
+cim:dd399a15-8baf-47c9-badb-adb5a1add4b8 a cim:connectivity;
+  cim:IdentifiedObject.mRID "dd399a15-8baf-47c9-badb-adb5a1add4b8";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:f7da80e6-d76f-4dd2-a4f7-e2b4e35f7159 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "f7da80e6-d76f-4dd2-a4f7-e2b4e35f7159";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-2" .
+
+cim:404e3b49-b215-4ac3-aa4b-60ff4b25c631 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "404e3b49-b215-4ac3-aa4b-60ff4b25c631";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q105" .
+
+cim:aacddd75-f7e8-45d3-98d3-3481723902f6 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "aacddd75-f7e8-45d3-98d3-3481723902f6";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR27" .
+
+cim:c8d56c4d-5678-4b4d-b4ee-43fd9c097bfb a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "c8d56c4d-5678-4b4d-b4ee-43fd9c097bfb";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR28" .
+
+cim:296c0703-6439-401a-a918-e1b4135a3452 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "296c0703-6439-401a-a918-e1b4135a3452";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR29" .
+
+cim:7013101f-997e-4935-8265-3266be53d2a0 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "7013101f-997e-4935-8265-3266be53d2a0";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS28" .
+
+cim:5fb79553-ebe1-44e2-93a4-557c88ecb3b4 a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "5fb79553-ebe1-44e2-93a4-557c88ecb3b4";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR30" .
+
+cim:96a4fbe5-a365-4c2d-b1f2-7cadd2eb269b a cim:connectivity;
+  cim:IdentifiedObject.mRID "96a4fbe5-a365-4c2d-b1f2-7cadd2eb269b";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:1815b32f-3106-40be-9307-dde21debfa9c a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "1815b32f-3106-40be-9307-dde21debfa9c";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-3" .
+
+cim:96b4fb37-f6be-46e5-bbba-5db67bbe0aa5 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "96b4fb37-f6be-46e5-bbba-5db67bbe0aa5";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q106" .
+
+cim:e410dedc-89cb-4194-a776-cae65aed4137 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "e410dedc-89cb-4194-a776-cae65aed4137";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR31" .
+
+cim:755c4953-e342-49f5-91c5-618186c91065 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "755c4953-e342-49f5-91c5-618186c91065";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR32" .
+
+cim:98e3f170-ad7b-4b8c-83e6-2aa3549a285b a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "98e3f170-ad7b-4b8c-83e6-2aa3549a285b";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR33" .
+
+cim:d3496331-6170-45ea-81b0-5d2591247c16 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "d3496331-6170-45ea-81b0-5d2591247c16";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS29" .
+
+cim:ac78d931-bd3c-4768-a6be-2ff7eeef9992 a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "ac78d931-bd3c-4768-a6be-2ff7eeef9992";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR34" .
+
+cim:1908f2d3-11db-4b96-bfca-64359543d08b a cim:connectivity;
+  cim:IdentifiedObject.mRID "1908f2d3-11db-4b96-bfca-64359543d08b";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:11c1fe7e-bc2a-4417-9c12-5789c79d32e8 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "11c1fe7e-bc2a-4417-9c12-5789c79d32e8";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-4" .
+
+cim:856bc479-0c5c-4070-9b84-64bc4abe22f3 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "856bc479-0c5c-4070-9b84-64bc4abe22f3";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q107" .
+
+cim:b865d99e-078d-419f-a98c-08c4b978b7f5 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "b865d99e-078d-419f-a98c-08c4b978b7f5";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR35" .
+
+cim:f0de992e-0e77-42c3-9c79-065d08232ff6 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "f0de992e-0e77-42c3-9c79-065d08232ff6";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR36" .
+
+cim:f70cf6af-76d6-4928-84a3-0f88ee245160 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "f70cf6af-76d6-4928-84a3-0f88ee245160";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR37" .
+
+cim:69b0ab1f-fc73-4095-800b-8b904a8df80d a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "69b0ab1f-fc73-4095-800b-8b904a8df80d";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS30" .
+
+cim:c364a5a4-6306-493b-b4cf-f870e1ce1f15 a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "c364a5a4-6306-493b-b4cf-f870e1ce1f15";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR38" .
+
+cim:83b19e50-6390-41c2-b8de-c5cda49a9e53 a cim:connectivity;
+  cim:IdentifiedObject.mRID "83b19e50-6390-41c2-b8de-c5cda49a9e53";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:3024c514-f4c3-4c87-9fb4-8fa52893b89a a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "3024c514-f4c3-4c87-9fb4-8fa52893b89a";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-5" .
+
+cim:4aa4e345-3311-414d-9825-47894a71cf64 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "4aa4e345-3311-414d-9825-47894a71cf64";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q108" .
+
+cim:8138a30f-d919-4392-9f82-016d2caee7b3 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "8138a30f-d919-4392-9f82-016d2caee7b3";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR39" .
+
+cim:0614fc5e-0e2c-459f-85d6-32d2dd89985e a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "0614fc5e-0e2c-459f-85d6-32d2dd89985e";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR40" .
+
+cim:309412ee-c5bf-442d-aedd-a1da57d56426 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "309412ee-c5bf-442d-aedd-a1da57d56426";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR41" .
+
+cim:aa69f4db-3eab-4fe8-988c-74516eae6932 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "aa69f4db-3eab-4fe8-988c-74516eae6932";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS31" .
+
+cim:a12efd36-fab6-49b5-9bf0-de84f1dfa0fa a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "a12efd36-fab6-49b5-9bf0-de84f1dfa0fa";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR42" .
+
+cim:f0a1457a-260c-469a-9552-02b4768f26ee a cim:connectivity;
+  cim:IdentifiedObject.mRID "f0a1457a-260c-469a-9552-02b4768f26ee";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:a9bebbb0-ac38-452b-b74b-56de58178d81 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "a9bebbb0-ac38-452b-b74b-56de58178d81";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-6" .
+
+cim:f3711d8e-2eb3-48c6-acf3-0ccda1aa0806 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "f3711d8e-2eb3-48c6-acf3-0ccda1aa0806";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q109" .
+
+cim:16acc00c-24b8-41ed-9fd6-33a55a5c9392 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "16acc00c-24b8-41ed-9fd6-33a55a5c9392";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR43" .
+
+cim:77769664-59f3-4051-87af-fc1db2888f59 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "77769664-59f3-4051-87af-fc1db2888f59";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR44" .
+
+cim:2e37e247-b288-4eeb-a991-10d7312a40ea a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "2e37e247-b288-4eeb-a991-10d7312a40ea";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR45" .
+
+cim:3d2540be-fcb5-4560-973e-c6914581c5d4 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "3d2540be-fcb5-4560-973e-c6914581c5d4";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS32" .
+
+cim:2abe6eb3-c06e-4980-85b2-9d3b7142b1be a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "2abe6eb3-c06e-4980-85b2-9d3b7142b1be";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR46" .
+
+cim:bdd6c50e-18ba-4454-b5fc-7e552bc2f82b a cim:connectivity;
+  cim:IdentifiedObject.mRID "bdd6c50e-18ba-4454-b5fc-7e552bc2f82b";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:6c8747be-5d43-4f21-9ebb-72e18318c4e2 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "6c8747be-5d43-4f21-9ebb-72e18318c4e2";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-7" .
+
+cim:36d04911-8c39-46a2-a02c-97976e08b551 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "36d04911-8c39-46a2-a02c-97976e08b551";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q110" .
+
+cim:21d9a005-a78f-4685-b1e2-d61c9bed6e0a a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "21d9a005-a78f-4685-b1e2-d61c9bed6e0a";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR47" .
+
+cim:71b5ee9a-eacb-4665-83f1-5da8c6cd8517 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "71b5ee9a-eacb-4665-83f1-5da8c6cd8517";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR48" .
+
+cim:86e4d493-56a4-430b-8c38-38dd3c6231ae a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "86e4d493-56a4-430b-8c38-38dd3c6231ae";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR49" .
+
+cim:51d72ca9-2815-4ccd-a0e7-f8c6db34069c a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "51d72ca9-2815-4ccd-a0e7-f8c6db34069c";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS33" .
+
+cim:ae590031-38d7-437c-a396-b4f9b6174158 a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "ae590031-38d7-437c-a396-b4f9b6174158";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR50" .
+
+cim:8d87e6fa-a8e2-4e71-a2fa-794f80a6abfd a cim:connectivity;
+  cim:IdentifiedObject.mRID "8d87e6fa-a8e2-4e71-a2fa-794f80a6abfd";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:ff3a7b81-39e1-4215-aa00-a7d91568b00c a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "ff3a7b81-39e1-4215-aa00-a7d91568b00c";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-8" .
+
+cim:1cbad280-8ec5-4871-99a6-b6a25fb79fa6 a cim:bus;
+  cim:IdentifiedObject.mRID "1cbad280-8ec5-4871-99a6-b6a25fb79fa6";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Bus2K" .
+
+cim:461cc157-dad9-47d4-8c42-667def8ff939 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "461cc157-dad9-47d4-8c42-667def8ff939";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q201" .
+
+cim:275c7462-59bc-417d-a6b9-751582da9436 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "275c7462-59bc-417d-a6b9-751582da9436";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR51" .
+
+cim:0b665960-ff67-49b4-8e8e-aa0e7cff94bd a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "0b665960-ff67-49b4-8e8e-aa0e7cff94bd";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR52" .
+
+cim:0b2e8e8b-b926-4e5e-9859-f98576ab6029 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "0b2e8e8b-b926-4e5e-9859-f98576ab6029";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR53" .
+
+cim:6781ce51-1d55-40d0-95ba-61822451d16e a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "6781ce51-1d55-40d0-95ba-61822451d16e";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR54" .
+
+cim:29642d88-21c3-4a4f-b5b4-b44f9ceb30a5 a cim:FourWindingVoltageTransformer;
+  cim:IdentifiedObject.mRID "29642d88-21c3-4a4f-b5b4-b44f9ceb30a5";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "VTR4" .
+
+cim:6d640ea5-47d8-4a2b-a63d-11c3a6bf1f09 a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "6d640ea5-47d8-4a2b-a63d-11c3a6bf1f09";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "SAR5" .
+
+cim:42a7562d-eac0-4f36-b023-b9467c17807d a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "42a7562d-eac0-4f36-b023-b9467c17807d";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS34" .
+
+cim:adffad15-e976-4052-9ac6-795208c3a562 a cim:ModularSwitchboardWithFuse;
+  cim:IdentifiedObject.mRID "adffad15-e976-4052-9ac6-795208c3a562";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS35" .
+
+cim:b71374ca-3a82-4c51-9298-f7980e56df6f a cim:connectivity;
+  cim:IdentifiedObject.mRID "b71374ca-3a82-4c51-9298-f7980e56df6f";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:ff1361b2-92d0-4822-905f-9370ae11b111 a cim:connectivity;
+  cim:IdentifiedObject.mRID "ff1361b2-92d0-4822-905f-9370ae11b111";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:ed0c8f32-9b00-4402-8953-f9f2dde06a62 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "ed0c8f32-9b00-4402-8953-f9f2dde06a62";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q202" .
+
+cim:93a96954-37e3-437e-9cd6-e160dbdab649 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "93a96954-37e3-437e-9cd6-e160dbdab649";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR55" .
+
+cim:64a60ba2-2a51-492c-919a-7bb3ddb0ff3d a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "64a60ba2-2a51-492c-919a-7bb3ddb0ff3d";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR56" .
+
+cim:cb1f3c13-5367-4b91-bf47-2c1684132849 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "cb1f3c13-5367-4b91-bf47-2c1684132849";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR57" .
+
+cim:879bd6f0-ae20-4b11-be45-9155b6c870fe a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "879bd6f0-ae20-4b11-be45-9155b6c870fe";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS36" .
+
+cim:e47308b3-5728-4ef3-a031-72bbda3032a6 a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "e47308b3-5728-4ef3-a031-72bbda3032a6";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR58" .
+
+cim:8b7f815a-e0e7-4367-b887-f9aaf18f70d3 a cim:connectivity;
+  cim:IdentifiedObject.mRID "8b7f815a-e0e7-4367-b887-f9aaf18f70d3";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:83d5f66a-f9e7-4094-8a34-f2f484d78279 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "83d5f66a-f9e7-4094-8a34-f2f484d78279";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB202" .
+
+cim:c2a62e4c-a70f-4fbf-b191-7fb575bfd023 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "c2a62e4c-a70f-4fbf-b191-7fb575bfd023";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q203" .
+
+cim:04632432-c4d1-4d83-9e0b-df997410e6a9 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "04632432-c4d1-4d83-9e0b-df997410e6a9";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR59" .
+
+cim:4a21bf3b-7b30-41eb-8bad-337602c92054 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "4a21bf3b-7b30-41eb-8bad-337602c92054";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR60" .
+
+cim:363671e3-4389-443c-8d7d-21a68026a708 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "363671e3-4389-443c-8d7d-21a68026a708";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR61" .
+
+cim:fe2d66c5-d3c2-497a-9ac8-fc44d477c75a a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "fe2d66c5-d3c2-497a-9ac8-fc44d477c75a";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS37" .
+
+cim:ef4753a5-45fc-4e60-870b-40c2c1deb1db a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "ef4753a5-45fc-4e60-870b-40c2c1deb1db";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR62" .
+
+cim:19b18277-6d9d-4cc0-bf1f-8a36f5de912a a cim:connectivity;
+  cim:IdentifiedObject.mRID "19b18277-6d9d-4cc0-bf1f-8a36f5de912a";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:efc57ace-173c-4d94-826d-12d7f1024cf9 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "efc57ace-173c-4d94-826d-12d7f1024cf9";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB203" .
+
+cim:271c82c6-61ed-4828-bec1-c8cee63562cb a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "271c82c6-61ed-4828-bec1-c8cee63562cb";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q204" .
+
+cim:9bd36bc1-a29b-4e44-b60b-d985cf96cadf a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "9bd36bc1-a29b-4e44-b60b-d985cf96cadf";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR63" .
+
+cim:0f55eb2e-0d8c-4a6a-8de9-559add231c83 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "0f55eb2e-0d8c-4a6a-8de9-559add231c83";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR64" .
+
+cim:46a5b59d-b267-475c-8d7c-ea3c09681801 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "46a5b59d-b267-475c-8d7c-ea3c09681801";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR65" .
+
+cim:f8d26605-2233-4d8d-b7bf-e72c9d35bdea a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "f8d26605-2233-4d8d-b7bf-e72c9d35bdea";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS38" .
+
+cim:131939ed-e475-4dd2-8483-1bf503ba5b77 a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "131939ed-e475-4dd2-8483-1bf503ba5b77";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR66" .
+
+cim:6e134929-63bb-4163-92bc-2544b01b1f1c a cim:connectivity;
+  cim:IdentifiedObject.mRID "6e134929-63bb-4163-92bc-2544b01b1f1c";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:44e69e5e-1e9b-4961-9cb0-0184cec149a5 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "44e69e5e-1e9b-4961-9cb0-0184cec149a5";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB204" .
+
+cim:4d1d6ffd-094d-4e12-8ea1-8c868f979471 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "4d1d6ffd-094d-4e12-8ea1-8c868f979471";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q205" .
+
+cim:2d12949f-ab54-4358-be75-7548dd4fa388 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "2d12949f-ab54-4358-be75-7548dd4fa388";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR67" .
+
+cim:79805a10-f126-4f58-b568-fcbd8867ef00 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "79805a10-f126-4f58-b568-fcbd8867ef00";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR68" .
+
+cim:b4b81eb4-1afb-4ecd-b22e-0e59ef4d8bca a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "b4b81eb4-1afb-4ecd-b22e-0e59ef4d8bca";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR69" .
+
+cim:df1f6863-a0bc-40b6-ba54-f0efdb0e840d a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "df1f6863-a0bc-40b6-ba54-f0efdb0e840d";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS39" .
+
+cim:f526cc3d-8b39-4221-9f72-a8d0e7bd4ccb a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "f526cc3d-8b39-4221-9f72-a8d0e7bd4ccb";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR70" .
+
+cim:892280c0-cd48-48f5-8856-006ed991b8ff a cim:connectivity;
+  cim:IdentifiedObject.mRID "892280c0-cd48-48f5-8856-006ed991b8ff";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:300a28bc-576f-4c87-ac9e-d46795a2e1e7 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "300a28bc-576f-4c87-ac9e-d46795a2e1e7";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-12" .
+
+cim:13ee0e90-e2f6-4121-9045-cb912044224f a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "13ee0e90-e2f6-4121-9045-cb912044224f";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q206" .
+
+cim:15399ef3-b8a1-492a-9e12-5edcc04492e7 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "15399ef3-b8a1-492a-9e12-5edcc04492e7";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR71" .
+
+cim:fe7742a7-142a-4121-ba7a-78ce4d0aab8f a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "fe7742a7-142a-4121-ba7a-78ce4d0aab8f";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR72" .
+
+cim:2e85f1dd-bf64-4bc9-99ab-60decf6adce6 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "2e85f1dd-bf64-4bc9-99ab-60decf6adce6";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR73" .
+
+cim:3a9b7fb1-63aa-4a26-bb2f-4c11eeb1d222 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "3a9b7fb1-63aa-4a26-bb2f-4c11eeb1d222";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS40" .
+
+cim:7659bbc7-db11-47c2-a670-e672d95a336c a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "7659bbc7-db11-47c2-a670-e672d95a336c";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR74" .
+
+cim:db591615-7891-4bba-9363-82f05173e965 a cim:connectivity;
+  cim:IdentifiedObject.mRID "db591615-7891-4bba-9363-82f05173e965";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:491cd120-5cc3-4f33-a986-14cbd12fe9b5 cim:IdentifiedObject.mRID "491cd120-5cc3-4f33-a986-14cbd12fe9b5";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  a cim:CableTransmissionLine;
+  cim:IdentifiedObject.name "CAB103-13" .
+
+cim:f7cdf45e-c8b8-4224-8807-223bce714442 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "f7cdf45e-c8b8-4224-8807-223bce714442";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q208" .
+
+cim:aebe149e-fd3b-4991-9de0-ba5b84419935 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "aebe149e-fd3b-4991-9de0-ba5b84419935";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR75" .
+
+cim:74055890-6c12-4119-9e12-a1d86ea95266 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "74055890-6c12-4119-9e12-a1d86ea95266";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR76" .
+
+cim:2d6cf9e8-6ec9-4a8f-841c-a9733002c66c a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "2d6cf9e8-6ec9-4a8f-841c-a9733002c66c";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR77" .
+
+cim:d908cf09-0baf-468f-b56d-0149616247e6 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "d908cf09-0baf-468f-b56d-0149616247e6";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS41" .
+
+cim:92a5f7b8-5a9e-499b-af51-c9a2c671346a a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "92a5f7b8-5a9e-499b-af51-c9a2c671346a";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR78" .
+
+cim:879b6b71-9388-4bfd-aab5-2b1d881b440a a cim:connectivity;
+  cim:IdentifiedObject.mRID "879b6b71-9388-4bfd-aab5-2b1d881b440a";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:a7fb93ad-8f06-4219-93a0-0ac003a43009 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "a7fb93ad-8f06-4219-93a0-0ac003a43009";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-14" .
+
+cim:8c37ed2c-6cb4-4607-b3bd-e1164d025803 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "8c37ed2c-6cb4-4607-b3bd-e1164d025803";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q209" .
+
+cim:609c6782-052c-49dc-8823-84986531d9e3 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "609c6782-052c-49dc-8823-84986531d9e3";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR79" .
+
+cim:60319c5a-50ed-4fd2-81de-601eba9c12b2 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "60319c5a-50ed-4fd2-81de-601eba9c12b2";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR80" .
+
+cim:16b649f6-a27b-4317-bfb3-8b803fd559b7 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "16b649f6-a27b-4317-bfb3-8b803fd559b7";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR81" .
+
+cim:534cd40d-e4c3-49bc-9681-74cd3697cd94 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "534cd40d-e4c3-49bc-9681-74cd3697cd94";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS42" .
+
+cim:2a375a26-8822-4fea-887a-45c7f2f088e4 a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "2a375a26-8822-4fea-887a-45c7f2f088e4";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR82" .
+
+cim:8bd2f372-199a-44f2-9bb2-a0222d2fcc46 a cim:connectivity;
+  cim:IdentifiedObject.mRID "8bd2f372-199a-44f2-9bb2-a0222d2fcc46";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:d3713c7e-8a2a-495b-bb33-28da03db3bcb a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "d3713c7e-8a2a-495b-bb33-28da03db3bcb";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-15" .
+
+cim:b3a33d38-d866-463b-8772-88e861750625 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "b3a33d38-d866-463b-8772-88e861750625";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q210" .
+
+cim:426cfab8-af82-40aa-bcb7-e709067bb71d a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "426cfab8-af82-40aa-bcb7-e709067bb71d";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR83" .
+
+cim:7e1217b7-d62e-4ed4-aa05-12f427b6d0c9 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "7e1217b7-d62e-4ed4-aa05-12f427b6d0c9";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR84" .
+
+cim:00cdf803-494a-4359-8e3c-7dee8957f753 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "00cdf803-494a-4359-8e3c-7dee8957f753";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR85" .
+
+cim:5f5a947c-0d15-448f-9cf0-a677b226ffff a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "5f5a947c-0d15-448f-9cf0-a677b226ffff";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS43" .
+
+cim:41e02539-2f6d-4b67-97ef-bd60c053663b a cim:SinglePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "41e02539-2f6d-4b67-97ef-bd60c053663b";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR86" .
+
+cim:87becc39-ca68-469e-9509-e776a2a9459f a cim:connectivity;
+  cim:IdentifiedObject.mRID "87becc39-ca68-469e-9509-e776a2a9459f";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:2374466e-69c4-49ae-a8b2-4f6eec6ee554 a cim:CableTransmissionLine;
+  cim:IdentifiedObject.mRID "2374466e-69c4-49ae-a8b2-4f6eec6ee554";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CAB103-16" .
+
+cim:25b668d0-41db-456a-9002-6f45f9726ede a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "25b668d0-41db-456a-9002-6f45f9726ede";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "SAR6" .
+
+cim:78437d1e-2fbc-4632-895f-eb0b89ac20f7 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "78437d1e-2fbc-4632-895f-eb0b89ac20f7";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS44" .
+
+cim:cf65784e-12f0-4bd1-8fc7-44c81c713dc5 a cim:connectivity;
+  cim:IdentifiedObject.mRID "cf65784e-12f0-4bd1-8fc7-44c81c713dc5";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:f86627ab-7913-4582-8a32-86d8965d2e32 a cim:connectivity;
+  cim:IdentifiedObject.mRID "f86627ab-7913-4582-8a32-86d8965d2e32";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:83d31542-059f-4330-ace0-75acf18b896a a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "83d31542-059f-4330-ace0-75acf18b896a";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "Q111" .
+
+cim:517fd83d-e323-47fc-af7d-19f0ac9022ee a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "517fd83d-e323-47fc-af7d-19f0ac9022ee";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR87" .
+
+cim:bf25aa46-2353-4ab1-a1dc-d7a6a38fc08d a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "bf25aa46-2353-4ab1-a1dc-d7a6a38fc08d";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR88" .
+
+cim:c60a24e9-20ad-4fdb-8320-314a2d98dbe0 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "c60a24e9-20ad-4fdb-8320-314a2d98dbe0";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "CTR89" .
+
+cim:e8227c0a-82d9-468d-b21d-9f35f37222b2 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "e8227c0a-82d9-468d-b21d-9f35f37222b2";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "DIS45" .
+
+cim:b73006ac-e376-4238-a613-095f5505234b a cim:ModularSwitchboard;
+  cim:IdentifiedObject.mRID "b73006ac-e376-4238-a613-095f5505234b";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10;
+  cim:IdentifiedObject.name "S211" .
+
+cim:f4db978e-05b4-44ef-89a4-3869bcfe9ea7 a cim:connectivity;
+  cim:IdentifiedObject.mRID "f4db978e-05b4-44ef-89a4-3869bcfe9ea7";
+  cim:ConductingEquipment.BaseVoltage cim:10;
+  cim:Equipment.EquipmentContainer cim:vl_10 .
+
+cim:df965c12-0feb-483b-8765-fad3522e2e2b a cim:bus;
+  cim:IdentifiedObject.mRID "df965c12-0feb-483b-8765-fad3522e2e2b";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "Bus1H" .
+
+cim:150bccaa-f1ee-43bf-a0bc-67142b4d4cad a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "150bccaa-f1ee-43bf-a0bc-67142b4d4cad";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR90" .
+
+cim:efc3c7f5-cbb6-4192-8817-b6cf41d5e5ca a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "efc3c7f5-cbb6-4192-8817-b6cf41d5e5ca";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR91" .
+
+cim:de2b0ef5-188a-4ccb-9f1a-5d6763ea3835 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "de2b0ef5-188a-4ccb-9f1a-5d6763ea3835";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "QT2H" .
+
+cim:5614c76c-6016-4641-b3ea-cad9b88e21b7 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "5614c76c-6016-4641-b3ea-cad9b88e21b7";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR92" .
+
+cim:f47bfa8b-900d-44fe-a134-dbaf0c3a4308 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "f47bfa8b-900d-44fe-a134-dbaf0c3a4308";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR93" .
+
+cim:86487dfd-6119-4eec-88f7-7323260432ac a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "86487dfd-6119-4eec-88f7-7323260432ac";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR94" .
+
+cim:361c2b1a-9485-43de-8394-b7771fec2a05 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "361c2b1a-9485-43de-8394-b7771fec2a05";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR95" .
+
+cim:ba1bcde5-910a-4c76-a3da-1f7d5dcf8d4d a cim:Disconnector;
+  cim:IdentifiedObject.mRID "ba1bcde5-910a-4c76-a3da-1f7d5dcf8d4d";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS46" .
+
+cim:15bfac68-b3d8-4517-a503-75c8608bef52 a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "15bfac68-b3d8-4517-a503-75c8608bef52";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "SAR7" .
+
+cim:449bfced-eda8-442f-bfe1-a1902c06ed0f a cim:connectivity;
+  cim:IdentifiedObject.mRID "449bfced-eda8-442f-bfe1-a1902c06ed0f";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:8db8eaa4-20a0-4538-8fc9-826b6867c14d a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "8db8eaa4-20a0-4538-8fc9-826b6867c14d";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS47" .
+
+cim:02403505-1a23-4a90-bcf1-8e3061d6a687 a cim:connectivity;
+  cim:IdentifiedObject.mRID "02403505-1a23-4a90-bcf1-8e3061d6a687";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:ff128fcd-6f6f-4f3e-a3ae-345b1fef8183 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "ff128fcd-6f6f-4f3e-a3ae-345b1fef8183";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR96" .
+
+cim:4432dcbc-aff6-45be-b778-b0395cfbe269 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "4432dcbc-aff6-45be-b778-b0395cfbe269";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR97" .
+
+cim:2e78551e-a80e-4104-9e00-e5eb2323de42 a cim:Disconnector;
+  cim:IdentifiedObject.mRID "2e78551e-a80e-4104-9e00-e5eb2323de42";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS48" .
+
+cim:c3295315-c1aa-4a05-9bd0-3b49677b888f a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "c3295315-c1aa-4a05-9bd0-3b49677b888f";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "SAR8" .
+
+cim:af1cb022-97cf-4de2-a12a-c1ac79828f34 a cim:connectivity;
+  cim:IdentifiedObject.mRID "af1cb022-97cf-4de2-a12a-c1ac79828f34";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:b0c61118-2899-43ec-8e8d-824f235db0e9 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "b0c61118-2899-43ec-8e8d-824f235db0e9";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS49" .
+
+cim:193ecb93-1187-4833-8593-88c85c5536db a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "193ecb93-1187-4833-8593-88c85c5536db";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "QW1H" .
+
+cim:37ceb4fc-2e3f-42df-a59c-7277e448c94c a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "37ceb4fc-2e3f-42df-a59c-7277e448c94c";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR98" .
+
+cim:9b2326eb-ea37-46eb-bbfa-8950e57ae62b a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "9b2326eb-ea37-46eb-bbfa-8950e57ae62b";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR99" .
+
+cim:fb5c38c4-2701-4591-9127-4ffa72e4bbbc a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "fb5c38c4-2701-4591-9127-4ffa72e4bbbc";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR100" .
+
+cim:19c43fba-45b6-45a6-9fbf-81fedd6a4e45 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "19c43fba-45b6-45a6-9fbf-81fedd6a4e45";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR101" .
+
+cim:5a3d13b5-5399-4286-be89-cdb74d813cde a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "5a3d13b5-5399-4286-be89-cdb74d813cde";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS50" .
+
+cim:242f6050-010a-41e9-90c6-9b6e1264c62e a cim:OverheadTransmissionLine;
+  cim:IdentifiedObject.mRID "242f6050-010a-41e9-90c6-9b6e1264c62e";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "W1H" .
+
+cim:0b70658c-7083-4279-8ce5-a26acdd5f83e a cim:RfFilter;
+  cim:IdentifiedObject.mRID "0b70658c-7083-4279-8ce5-a26acdd5f83e";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS51" .
+
+cim:0333066c-66a5-437e-b187-708ef4596f8d a cim:WaveTrap;
+  cim:IdentifiedObject.mRID "0333066c-66a5-437e-b187-708ef4596f8d";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS52" .
+
+cim:1dcce456-9752-4ac7-8983-051238b16fc7 a cim:CouplingCapacitor;
+  cim:IdentifiedObject.mRID "1dcce456-9752-4ac7-8983-051238b16fc7";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS53" .
+
+cim:f0241e5f-6438-4625-95a6-153d20dea9d6 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "f0241e5f-6438-4625-95a6-153d20dea9d6";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS54" .
+
+cim:f02470b2-8603-4f31-812d-9f75feec80d6 a cim:connectivity;
+  cim:IdentifiedObject.mRID "f02470b2-8603-4f31-812d-9f75feec80d6";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:17bf8f01-05dd-446c-b79b-f84614763494 a cim:Disconnector;
+  cim:IdentifiedObject.mRID "17bf8f01-05dd-446c-b79b-f84614763494";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS55" .
+
+cim:d878fa32-6650-4ac0-84bc-8b4d13ad0430 a cim:connectivity;
+  cim:IdentifiedObject.mRID "d878fa32-6650-4ac0-84bc-8b4d13ad0430";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:c3e17612-6592-4bec-bac5-49005e26dfad a cim:connectivity;
+  cim:IdentifiedObject.mRID "c3e17612-6592-4bec-bac5-49005e26dfad";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:96cb3246-8ad1-4961-8ecb-512fb63be70b a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "96cb3246-8ad1-4961-8ecb-512fb63be70b";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "QW2H" .
+
+cim:d0fea8f8-e181-49e5-b2a9-fae32d262d7b a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "d0fea8f8-e181-49e5-b2a9-fae32d262d7b";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR102" .
+
+cim:af936328-d347-4dc1-ad6e-e8e3b044969a a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "af936328-d347-4dc1-ad6e-e8e3b044969a";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR103" .
+
+cim:c74c106c-e197-48a0-b181-b2b5884b5f77 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "c74c106c-e197-48a0-b181-b2b5884b5f77";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR104" .
+
+cim:bb67d397-0c70-4515-bb16-156b7b5c2b3c a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "bb67d397-0c70-4515-bb16-156b7b5c2b3c";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR105" .
+
+cim:3befae62-8eb8-4c3d-b364-2f19e331968e a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "3befae62-8eb8-4c3d-b364-2f19e331968e";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS56" .
+
+cim:a809ce63-1d85-4baa-b75f-65a3ae69bf3c a cim:OverheadTransmissionLine;
+  cim:IdentifiedObject.mRID "a809ce63-1d85-4baa-b75f-65a3ae69bf3c";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "W2H" .
+
+cim:c38dab34-eae4-4fe7-8995-e000186994cb a cim:RfFilter;
+  cim:IdentifiedObject.mRID "c38dab34-eae4-4fe7-8995-e000186994cb";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS57" .
+
+cim:0f2e0237-e2d7-4bc9-ad65-694f6728553e a cim:WaveTrap;
+  cim:IdentifiedObject.mRID "0f2e0237-e2d7-4bc9-ad65-694f6728553e";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS58" .
+
+cim:865c68dc-f9ca-4e39-a2a5-b69e942fbba3 a cim:CouplingCapacitor;
+  cim:IdentifiedObject.mRID "865c68dc-f9ca-4e39-a2a5-b69e942fbba3";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS59" .
+
+cim:5cbf5d4f-1f61-48a9-878b-d6c25ca9d429 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "5cbf5d4f-1f61-48a9-878b-d6c25ca9d429";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS60" .
+
+cim:be2726b6-7341-4b6d-92c2-93aa7da037c7 a cim:connectivity;
+  cim:IdentifiedObject.mRID "be2726b6-7341-4b6d-92c2-93aa7da037c7";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:9943ac25-543c-48b4-90f9-b8086ea2e887 a cim:Disconnector;
+  cim:IdentifiedObject.mRID "9943ac25-543c-48b4-90f9-b8086ea2e887";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS61" .
+
+cim:487c55cc-8d3b-45ce-b398-8c1963640966 a cim:connectivity;
+  cim:IdentifiedObject.mRID "487c55cc-8d3b-45ce-b398-8c1963640966";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:2b900752-a290-4d29-9941-858924f72c92 a cim:connectivity;
+  cim:IdentifiedObject.mRID "2b900752-a290-4d29-9941-858924f72c92";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:70ad20c8-0f9a-4cbb-b2c5-d073fee745d2 a cim:FourWindingVoltageTransformer;
+  cim:IdentifiedObject.mRID "70ad20c8-0f9a-4cbb-b2c5-d073fee745d2";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "VTR5" .
+
+cim:9d76a6d6-a456-43f2-a651-7f51afb81ef3 a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "9d76a6d6-a456-43f2-a651-7f51afb81ef3";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "SAR9" .
+
+cim:fd31018a-27fa-43ce-864d-3208e12fc3f5 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "fd31018a-27fa-43ce-864d-3208e12fc3f5";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS62" .
+
+cim:c4aa5858-09ab-4c59-bac3-1e2ceb23769d a cim:ModularSwitchboardWithFuse;
+  cim:IdentifiedObject.mRID "c4aa5858-09ab-4c59-bac3-1e2ceb23769d";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS63" .
+
+cim:45cdf492-abb9-456c-bd28-335a7379f79e a cim:connectivity;
+  cim:IdentifiedObject.mRID "45cdf492-abb9-456c-bd28-335a7379f79e";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:31e73437-8125-4885-8b3d-52a8fbda0ee6 a cim:connectivity;
+  cim:IdentifiedObject.mRID "31e73437-8125-4885-8b3d-52a8fbda0ee6";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:91f76760-0bef-487d-a8fc-021669682988 a cim:bus;
+  cim:IdentifiedObject.mRID "91f76760-0bef-487d-a8fc-021669682988";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "Bus2H" .
+
+cim:a12aa2af-0a3d-4be7-8475-474860d366e8 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "a12aa2af-0a3d-4be7-8475-474860d366e8";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "QT1H" .
+
+cim:21515560-9704-426c-b69a-61fe46302ff1 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "21515560-9704-426c-b69a-61fe46302ff1";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR106" .
+
+cim:11092f7f-fa61-45a8-b0c0-f937a573c5e1 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "11092f7f-fa61-45a8-b0c0-f937a573c5e1";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR107" .
+
+cim:ad67deeb-55db-4211-8f61-2ff7015c3085 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "ad67deeb-55db-4211-8f61-2ff7015c3085";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR108" .
+
+cim:73332a29-95b7-4e17-86f2-2f2c897ae081 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "73332a29-95b7-4e17-86f2-2f2c897ae081";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR109" .
+
+cim:80025481-733b-4a95-b72f-b01aacfec3b2 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "80025481-733b-4a95-b72f-b01aacfec3b2";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "QW3H" .
+
+cim:751b36a4-d30f-4f2e-981b-d4970dfc297f a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "751b36a4-d30f-4f2e-981b-d4970dfc297f";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR110" .
+
+cim:00e3aec7-c9b7-41d2-85b6-8391810f16dd a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "00e3aec7-c9b7-41d2-85b6-8391810f16dd";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR111" .
+
+cim:59003c62-5d58-42d1-b395-104a1084fe77 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "59003c62-5d58-42d1-b395-104a1084fe77";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR112" .
+
+cim:686b3127-ff38-4c0c-8126-19d5ebfcbd08 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "686b3127-ff38-4c0c-8126-19d5ebfcbd08";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR113" .
+
+cim:f7d85638-c82b-45cc-b2fc-9e9434013eb8 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "f7d85638-c82b-45cc-b2fc-9e9434013eb8";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS64" .
+
+cim:09d518cb-797a-40fc-a750-1bb818d32353 a cim:OverheadTransmissionLine;
+  cim:IdentifiedObject.mRID "09d518cb-797a-40fc-a750-1bb818d32353";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "W3H" .
+
+cim:92c9a7e6-2906-4329-9edd-2dce6ddc7fc3 a cim:RfFilter;
+  cim:IdentifiedObject.mRID "92c9a7e6-2906-4329-9edd-2dce6ddc7fc3";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS65" .
+
+cim:f8f3c26b-22c0-440e-9c36-ef82a1264923 a cim:WaveTrap;
+  cim:IdentifiedObject.mRID "f8f3c26b-22c0-440e-9c36-ef82a1264923";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS66" .
+
+cim:c0ddc703-9ddc-43f6-99b6-31a98fabfb6a a cim:CouplingCapacitor;
+  cim:IdentifiedObject.mRID "c0ddc703-9ddc-43f6-99b6-31a98fabfb6a";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS67" .
+
+cim:f65c24f3-17d6-4066-a8ec-914d9665defe a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "f65c24f3-17d6-4066-a8ec-914d9665defe";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS68" .
+
+cim:83f28a30-f3f3-48e3-931f-677452722fa7 a cim:connectivity;
+  cim:IdentifiedObject.mRID "83f28a30-f3f3-48e3-931f-677452722fa7";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:56cebe12-1c6e-4cbd-af6e-0d2be8f44717 a cim:Disconnector;
+  cim:IdentifiedObject.mRID "56cebe12-1c6e-4cbd-af6e-0d2be8f44717";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS69" .
+
+cim:879033a9-160e-43a0-8614-f3ca857baa3f a cim:connectivity;
+  cim:IdentifiedObject.mRID "879033a9-160e-43a0-8614-f3ca857baa3f";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:f6bb807c-d48c-462c-9f9f-2e3ee4a9ddb6 a cim:connectivity;
+  cim:IdentifiedObject.mRID "f6bb807c-d48c-462c-9f9f-2e3ee4a9ddb6";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:c052ed7f-f636-4f49-adcd-22e74fa93ddd a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "c052ed7f-f636-4f49-adcd-22e74fa93ddd";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "QW4H" .
+
+cim:ffcd39ac-16ac-490c-949c-73854f6e93b1 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "ffcd39ac-16ac-490c-949c-73854f6e93b1";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR114" .
+
+cim:f0b899d0-0fc5-48b5-a859-e5db4c0fe422 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "f0b899d0-0fc5-48b5-a859-e5db4c0fe422";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR115" .
+
+cim:8553916d-8389-487d-804d-e6675d576357 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "8553916d-8389-487d-804d-e6675d576357";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR116" .
+
+cim:b420e16a-cbde-4d67-a53c-ed958abe9d84 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "b420e16a-cbde-4d67-a53c-ed958abe9d84";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR117" .
+
+cim:68be1abc-2ce4-4d70-a72c-e61c4b3dee25 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "68be1abc-2ce4-4d70-a72c-e61c4b3dee25";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS70" .
+
+cim:7bec31cb-a0c0-4e10-ae69-445d42e27591 a cim:OverheadTransmissionLine;
+  cim:IdentifiedObject.mRID "7bec31cb-a0c0-4e10-ae69-445d42e27591";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "W4H" .
+
+cim:92b893c2-90ed-4e03-9eb4-91e089b7c88b a cim:RfFilter;
+  cim:IdentifiedObject.mRID "92b893c2-90ed-4e03-9eb4-91e089b7c88b";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS71" .
+
+cim:13fbf69d-488a-4f72-9b3c-eb3a7de7a1ab a cim:WaveTrap;
+  cim:IdentifiedObject.mRID "13fbf69d-488a-4f72-9b3c-eb3a7de7a1ab";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS72" .
+
+cim:c3340b18-a148-43c2-9d3e-4e160a92f3d9 a cim:CouplingCapacitor;
+  cim:IdentifiedObject.mRID "c3340b18-a148-43c2-9d3e-4e160a92f3d9";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS73" .
+
+cim:fbed2dd7-e516-4f63-8a7c-18c1093fb545 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "fbed2dd7-e516-4f63-8a7c-18c1093fb545";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS74" .
+
+cim:78725182-7994-41c9-9231-43216920e7b8 a cim:connectivity;
+  cim:IdentifiedObject.mRID "78725182-7994-41c9-9231-43216920e7b8";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:426affe9-8749-4738-a145-159524f0b918 a cim:Disconnector;
+  cim:IdentifiedObject.mRID "426affe9-8749-4738-a145-159524f0b918";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS75" .
+
+cim:6c6d1e30-1801-4d3f-9357-a1625e1ec342 a cim:connectivity;
+  cim:IdentifiedObject.mRID "6c6d1e30-1801-4d3f-9357-a1625e1ec342";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:3fdbea5d-f054-49ec-aa8f-79dcacac96e3 a cim:connectivity;
+  cim:IdentifiedObject.mRID "3fdbea5d-f054-49ec-aa8f-79dcacac96e3";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:6c81e58a-a04f-4345-8e2d-8fbe889bf710 a cim:FourWindingVoltageTransformer;
+  cim:IdentifiedObject.mRID "6c81e58a-a04f-4345-8e2d-8fbe889bf710";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "VTR6" .
+
+cim:a0421095-b073-4e2c-9689-cc789fa71350 a cim:SurgeArrester;
+  cim:IdentifiedObject.mRID "a0421095-b073-4e2c-9689-cc789fa71350";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "SAR10" .
+
+cim:77195a9b-8a89-46ed-94bd-69d2872fdcaf a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "77195a9b-8a89-46ed-94bd-69d2872fdcaf";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS76" .
+
+cim:227e0455-43c3-4ffd-9c2f-0540fdaeb5b2 a cim:ModularSwitchboardWithFuse;
+  cim:IdentifiedObject.mRID "227e0455-43c3-4ffd-9c2f-0540fdaeb5b2";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS77" .
+
+cim:f804503f-fddc-45b2-bdce-7594f029e2da a cim:connectivity;
+  cim:IdentifiedObject.mRID "f804503f-fddc-45b2-bdce-7594f029e2da";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:8450f926-29b6-4278-9b1c-53094a95e799 a cim:connectivity;
+  cim:IdentifiedObject.mRID "8450f926-29b6-4278-9b1c-53094a95e799";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:e340b24f-a49b-4624-b1de-58b006de336c a cim:connectivity;
+  cim:IdentifiedObject.mRID "e340b24f-a49b-4624-b1de-58b006de336c";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:c368f41d-2c4c-4888-a12c-a01ec498d7f4 a cim:IndoorCircuitBreaker;
+  cim:IdentifiedObject.mRID "c368f41d-2c4c-4888-a12c-a01ec498d7f4";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "QC1H" .
+
+cim:59b8157b-d8fe-43a2-8b6a-1d0048b21cb3 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "59b8157b-d8fe-43a2-8b6a-1d0048b21cb3";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR118" .
+
+cim:99041c7c-0f0c-449e-94a5-0d8c0262cf2b a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "99041c7c-0f0c-449e-94a5-0d8c0262cf2b";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR119" .
+
+cim:505ef8c9-10d5-4b59-9eaf-0171d2ba73d9 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "505ef8c9-10d5-4b59-9eaf-0171d2ba73d9";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR120" .
+
+cim:c1e11f72-4214-4117-bdbe-72b4394f5f36 a cim:ThreePhaseCurrentTransformer;
+  cim:IdentifiedObject.mRID "c1e11f72-4214-4117-bdbe-72b4394f5f36";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "CTR121" .
+
+cim:fe058b5d-8d70-4f09-9d0a-76e96b1a4679 a cim:GroundDisconnector;
+  cim:IdentifiedObject.mRID "fe058b5d-8d70-4f09-9d0a-76e96b1a4679";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS78" .
+
+cim:47e56585-b530-4a85-ab84-2fb4789221b4 a cim:Disconnector;
+  cim:IdentifiedObject.mRID "47e56585-b530-4a85-ab84-2fb4789221b4";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "DIS79" .
+
+cim:d1b85d8a-7043-4eb1-8bdb-2d0e14ab0f3f a cim:connectivity;
+  cim:IdentifiedObject.mRID "d1b85d8a-7043-4eb1-8bdb-2d0e14ab0f3f";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35 .
+
+cim:7cb60950-82e1-448d-9c68-ec2ad929ff7f a cim:ModularSwitchboard;
+  cim:IdentifiedObject.mRID "7cb60950-82e1-448d-9c68-ec2ad929ff7f";
+  cim:ConductingEquipment.BaseVoltage cim:35;
+  cim:Equipment.EquipmentContainer cim:vl_35;
+  cim:IdentifiedObject.name "SH" .
