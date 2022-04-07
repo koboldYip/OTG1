@@ -18,7 +18,7 @@ public class Element extends Identifier {
     private String projectName;
     private List<Map<String, String>> fields;
     private List<Port> ports;
-//    private List<Port> connectedPorts = new ArrayList<>();
-//    private List<Terminal> terminal = new ArrayList<>();
+    private List<Port> connectedPorts = new ArrayList<>();
+    private List<Terminal> terminal = new ArrayList<>();
 
 }

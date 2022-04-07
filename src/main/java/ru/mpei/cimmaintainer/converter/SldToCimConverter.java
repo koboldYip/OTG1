@@ -9,6 +9,7 @@ import org.eclipse.rdf4j.rio.Rio;
 import ru.mpei.cimmaintainer.catalog.Catalog;
 import ru.mpei.cimmaintainer.dto.Element;
 import ru.mpei.cimmaintainer.dto.Link;
+import ru.mpei.cimmaintainer.dto.Port;
 import ru.mpei.cimmaintainer.dto.SingleLineDiagram;
 import ru.mpei.cimmaintainer.writer.RdfWriter;
 
@@ -22,6 +23,8 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class SldToCimConverter {
@@ -43,15 +46,28 @@ public class SldToCimConverter {
         sld.getElements().forEach(this::convertElementToRdfResource);
     }
 
-//    public void connectApply(SingleLineDiagram sld) {
-//        List<Element> elements = sld.getElements();
-//        List<Link> links = sld.getLinks();
-//
-//        elements = elements.stream().filter(element -> !element.getType().equals("connectivity"))
-//                .collect(Collectors.toList());
-//
-//
-//    }
+    public void connectApply(SingleLineDiagram sld) {
+        List<Element> elements = sld.getElements();
+        Map<String, Link> links = sld.getLinks().stream().collect(Collectors.toMap(Link::getId, Function.identity()));
+
+        elements = elements.stream().filter(element -> !element.getType().equals("connectivity"))
+                .collect(Collectors.toList());
+        for (Element e :
+                elements) {
+            boolean flag = true;
+            while (flag) {
+                List<Port> portsE = e.getPorts().stream().filter(port -> !e.getConnectedPorts().contains(port))
+                        .collect(Collectors.toList());
+                if (portsE.isEmpty()) {
+                    break;
+                }
+                Port portSource = portsE.get(0);
+                Link linkSource = links.get(portSource.getLinks().get(0));
+
+            }
+        }
+
+    }
 
     public void build(SingleLineDiagram sld) {
         List<String> levelWires = Arrays.asList("HV", "MV", "LV");
