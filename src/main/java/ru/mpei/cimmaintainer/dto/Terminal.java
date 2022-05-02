@@ -5,17 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Terminal {
+public class Terminal extends Identifier {
 
-    static int count = 0;
-
-    public Terminal(Element element) {
-        this.id = element.getId() + "Terminal";
-        this.resource = element;
-    }
-
-    private String id;
+    private String name = "Terminal";
+    private Element element;
+    private Port port;
     private ConnectivityNode connectivityNode;
-    private Element resource;
 
 }

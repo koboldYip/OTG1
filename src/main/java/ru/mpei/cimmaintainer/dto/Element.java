@@ -3,7 +3,6 @@ package ru.mpei.cimmaintainer.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,10 +14,9 @@ public class Element extends Identifier {
     private String voltageLevel;
     private String operationName;
     private String type;
+    private String CIMType;
     private String projectName;
     private List<Map<String, String>> fields;
     private List<Port> ports;
-    private List<Port> connectedPorts = new ArrayList<>();
-    private List<Terminal> terminal = new ArrayList<>();
 
 }

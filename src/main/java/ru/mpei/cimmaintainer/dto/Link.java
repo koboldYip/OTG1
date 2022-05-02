@@ -11,4 +11,9 @@ public class Link extends Identifier {
     private String targetId;
     private String sourcePortId;
     private String targetPortId;
+
+    private Port sourcePort;
+    private Port targetPort;
+    private Element source;
+    private Element target;
 }
