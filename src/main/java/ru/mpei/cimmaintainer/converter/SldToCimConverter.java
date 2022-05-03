@@ -194,18 +194,20 @@ public class SldToCimConverter {
                 .add("cim:Terminal.ConductingEquipment", "cim:" + element.getId())
                 .add("cim:Terminal.ConnectivityNode", "cim:" + connectivityNode.getId());
 
-        Terminal terminalDirectory = new Terminal();
-        terminalDirectory.setId(UUID.randomUUID().toString());
-        terminalDirectory.setElement(powerTREndDirectory);
-        terminalDirectory.setConnectivityNode(connectivityNode);
-        connectivityNode.getTerminals().add(terminalDirectory);
+        if (!elements.get(0).getType().equals("connectivity")) {
+            Terminal terminalDirectory = new Terminal();
+            terminalDirectory.setId(UUID.randomUUID().toString());
+            terminalDirectory.setElement(powerTREndDirectory);
+            terminalDirectory.setConnectivityNode(connectivityNode);
+            connectivityNode.getTerminals().add(terminalDirectory);
 
-        modelBuilder.subject("cim:" + terminalDirectory.getId())
-                .add("cim:IdentifiedObject.mRID", terminalDirectory.getId())
-                .add(RDF.TYPE, "cim:" + terminalDirectory.getName())
-                .add("cim:IdentifiedObject.name", terminalDirectory.getName())
-                .add("cim:Terminal.ConductingEquipment", "cim:" + powerTREndDirectory.getId())
-                .add("cim:Terminal.ConnectivityNode", "cim:" + connectivityNode.getId());
+            modelBuilder.subject("cim:" + terminalDirectory.getId())
+                    .add("cim:IdentifiedObject.mRID", terminalDirectory.getId())
+                    .add(RDF.TYPE, "cim:" + terminalDirectory.getName())
+                    .add("cim:IdentifiedObject.name", terminalDirectory.getName())
+                    .add("cim:Terminal.ConductingEquipment", "cim:" + powerTREndDirectory.getId())
+                    .add("cim:Terminal.ConnectivityNode", "cim:" + connectivityNode.getId());
+        }
     }
 
 
@@ -354,14 +356,22 @@ public class SldToCimConverter {
                 case "CableTransmissionLine":
                     element.setCIMType("ACLineSegment");
                     break;
-                case "RfFilter":
                 case "WaveTrap":
-                case "CouplingCapacitor":
+                    element.setCIMType("WaveTrap");
+                    break;
                 case "GroundDisconnector":
+                    element.setCIMType("GroundDisconnector");
+                    break;
                 case "Disconnector":
+                    element.setCIMType("Disconnector");
+                    break;
+                case "SurgeArrester":
+                    element.setCIMType("SurgeArrester");
+                    break;
+                case "RfFilter":
+                case "CouplingCapacitor":
                 case "Breaker":
                 case "ThreePhaseCurrentTransformer":
-                case "SurgeArrester":
                 case "IndoorCircuitBreaker":
                 case "ModularSwitchboardWithFuse":
                 case "SinglePhaseCurrentTransformer":
