@@ -352,38 +352,22 @@ public class SldToCimConverter {
         if (catalog.getDeviceDirectory().get(element.getDirectoryEntryId()) != null) {
             element.setCIMType(catalog.getDeviceDirectory().get(element.getDirectoryEntryId()));
             switch (element.getCIMType()) {
-                case "OverheadTransmissionLine":
-                case "CableTransmissionLine":
-                    element.setCIMType("ACLineSegment");
-                    break;
-                case "WaveTrap":
-                    element.setCIMType("WaveTrap");
-                    break;
-                case "GroundDisconnector":
-                    element.setCIMType("GroundDisconnector");
-                    break;
-                case "Disconnector":
-                    element.setCIMType("Disconnector");
-                    break;
-                case "SurgeArrester":
-                    element.setCIMType("SurgeArrester");
-                    break;
-                case "RfFilter":
-                case "CouplingCapacitor":
-                case "Breaker":
-                case "ThreePhaseCurrentTransformer":
-                case "IndoorCircuitBreaker":
-                case "ModularSwitchboardWithFuse":
-                case "SinglePhaseCurrentTransformer":
-                case "ModularSwitchboard":
-                case "FourWindingVoltageTransformer":
-                    element.setCIMType("Breaker");
-                    break;
-                case "ThreeWindingPowerTransformerWithTapChanger":
-                    element.setCIMType("PowerTransformer");
-                    break;
-                default:
-                    throw new RuntimeException("Unexpected device type: " + element.getCIMType());
+                case "OverheadTransmissionLine", "CableTransmissionLine" -> element.setCIMType("ACLineSegment");
+                case "WaveTrap" -> element.setCIMType("WaveTrap");
+                case "GroundDisconnector" -> element.setCIMType("GroundDisconnector");
+                case "Disconnector" -> element.setCIMType("Disconnector");
+                case "SurgeArrester" -> element.setCIMType("SurgeArrester");
+                case "RfFilter",
+                        "CouplingCapacitor",
+                        "Breaker",
+                        "ThreePhaseCurrentTransformer",
+                        "IndoorCircuitBreaker",
+                        "ModularSwitchboardWithFuse",
+                        "SinglePhaseCurrentTransformer",
+                        "ModularSwitchboard",
+                        "FourWindingVoltageTransformer" -> element.setCIMType("Breaker");
+                case "ThreeWindingPowerTransformerWithTapChanger" -> element.setCIMType("PowerTransformer");
+                default -> throw new RuntimeException("Unexpected device type: " + element.getCIMType());
             }
         }
     }

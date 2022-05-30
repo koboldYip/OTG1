@@ -1,5 +1,6 @@
 package ru.mpei.cimmaintainer.writer;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
@@ -13,13 +14,15 @@ import org.eclipse.rdf4j.repository.sail.SailRepository;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.Rio;
 import org.eclipse.rdf4j.sail.memory.MemoryStore;
+import ru.mpei.cimmaintainer.dto.CIM;
 import ru.mpei.cimmaintainer.dto.ConnectivityNode;
 import ru.mpei.cimmaintainer.dto.Element;
 import ru.mpei.cimmaintainer.dto.Terminal;
 
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
-import java.util.LinkedList;
-import java.util.List;
+import java.io.FileWriter;
+import java.nio.file.Paths;
 
 @Getter
 @Setter
@@ -30,28 +33,21 @@ public class JsonWriter {
     private RepositoryConnection connection = new SailRepository(new MemoryStore()).getConnection();
     private String queryString;
     private TupleQuery query;
-    private List<Terminal> terminals;
-    private List<ConnectivityNode> connectivityNodes;
-    private List<Element> elements;
+    private CIM all = new CIM();
+    private ObjectMapper objectMapper = new ObjectMapper();
+
 
     @SneakyThrows
     public void parseCimRdfToJson(String filePath) {
         results = Rio.parse(new FileInputStream(filePath),
                 cimUri,
                 RDFFormat.RDFXML);
-        terminals = new LinkedList<>();
-        connectivityNodes = new LinkedList<>();
-        elements = new LinkedList<>();
-
         connection.add(results);
-//        this.parseConnectivityNodes()
-//                .parseBus()
-//                .parseTerminals()
-//                this.parseTerminals();
         this.parse();
         System.out.println();
     }
 
+    @SneakyThrows
     private JsonWriter parse() {
         queryString = "PREFIX cim: <" + cimUri + "> " +
                 "SELECT ?tId ?cnId ?ceId " +
@@ -65,13 +61,13 @@ public class JsonWriter {
                 "}";
 
         query = connection.prepareTupleQuery(QueryLanguage.SPARQL, queryString);
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/test/resources/json", false));
         try (TupleQueryResult result = query.evaluate()) {
             for (BindingSet solution :
                     result) {
                 Terminal terminal = new Terminal();
                 ConnectivityNode connectivityNode = new ConnectivityNode();
                 Element element = new Element();
-//                String t = solution.getValue("t").stringValue();
                 String tId = solution.getValue("tId").stringValue();
                 String cnId = solution.getValue("cnId").stringValue();
                 String ceId = solution.getValue("ceId").stringValue();
@@ -80,117 +76,12 @@ public class JsonWriter {
                 element.setId(ceId);
                 terminal.setConnectivityNode(connectivityNode);
                 terminal.setElement(element);
-                terminals.add(terminal);
-                connectivityNodes.add(connectivityNode);
-                elements.add(element);
-                System.out.println();
+                all.getElements().add(connectivityNode);
+                all.getElements().add(element);
+                all.getTerminals().add(terminal);
             }
         }
-        return this;
-    }
-
-    private JsonWriter parseTerminals() {
-        queryString = "PREFIX cim: <" + cimUri + "> " +
-                "SELECT ?tId ?cnId ?ceId " +
-                "WHERE { " +
-                "    ?t a cim:Terminal ; " +
-                "       cim:IdentifiedObject.mRID ?tId ; " +
-                "       cim:Terminal.ConductingEquipment ?ce ; " +
-                "       cim:Terminal.ConnectivityNode ?cn . " +
-                "    ?cn cim:IdentifiedObject.mRID ?cnId . " +
-                "    ?ce cim:IdentifiedObject.mRID ?ceId . " +
-                "}";
-
-        query = connection.prepareTupleQuery(QueryLanguage.SPARQL, queryString);
-        try (TupleQueryResult result = query.evaluate()) {
-            for (BindingSet solution :
-                    result) {
-                String tId = solution.getValue("tId").stringValue();
-                String cnId = solution.getValue("cnId").stringValue();
-                String ceId = solution.getValue("ceId").stringValue();
-                System.out.println("tId = " + tId);
-                System.out.println("cnId = " + cnId);
-                System.out.println("ceId = " + ceId);
-                System.out.println();
-            }
-        }
-        return this;
-    }
-
-    private JsonWriter parseBus() {
-        queryString = "PREFIX cim: <" + cimUri + "> " +
-                "SELECT ?tId ?cnId ?ceId " +
-                "WHERE { " +
-                "    ?t a cim:bus ; " +
-                "       cim:IdentifiedObject.mRID ?tId ; " +
-                "       cim:ConductingEquipment.BaseVoltage ?ce ; " +
-                "       cim:Equipment.EquipmentContainer ?cn . " +
-                "    ?cn cim:IdentifiedObject.mRID ?cnId . " +
-                "    ?ce cim:IdentifiedObject.mRID ?ceId . " +
-                "}";
-
-        query = connection.prepareTupleQuery(QueryLanguage.SPARQL, queryString);
-        try (TupleQueryResult result = query.evaluate()) {
-            for (BindingSet solution :
-                    result) {
-                String tId = solution.getValue("tId").stringValue();
-                String cnId = solution.getValue("cnId").stringValue();
-                String ceId = solution.getValue("ceId").stringValue();
-                System.out.println("tId = " + tId);
-                System.out.println("cnId = " + cnId);
-                System.out.println("ceId = " + ceId);
-            }
-        }
-        return this;
-    }
-
-    private JsonWriter parseConnectivityNodes() {
-        queryString = "PREFIX cim: <" + cimUri + "> " +
-                "SELECT ?tId ?ceId " +
-                "WHERE { " +
-                "    ?t a cim:ConnectivityNode ; " +
-                "       cim:IdentifiedObject.mRID ?tId ; " +
-                "       cim:ConnectivityNode.BaseVoltage ?ceId . " +
-                "}";
-
-        query = connection.prepareTupleQuery(QueryLanguage.SPARQL, queryString);
-        try (TupleQueryResult result = query.evaluate()) {
-            for (BindingSet solution :
-                    result) {
-                String tId = solution.getValue("tId").stringValue();
-                String ceId = solution.getValue("ceId").stringValue();
-                System.out.println("tId = " + tId);
-                System.out.println("ceId = " + ceId);
-            }
-        }
-        return this;
-    }
-
-    private JsonWriter parseBrakers() {
-        String queryString = "PREFIX cim: <" + cimUri + "> " +
-                "SELECT ?tId ?cnId ?ceId " +
-                "WHERE { " +
-                "    ?t a cim:Breaker ; " +
-                "       cim:IdentifiedObject.mRID ?tId ; " +
-                "       cim:ConductingEquipment.BaseVoltage ?ce ; " +
-                "       cim:Equipment.EquipmentContainer ?cn . " +
-                "    ?cn cim:IdentifiedObject.mRID ?cnId . " +
-                "    ?ce cim:IdentifiedObject.mRID ?ceId . " +
-                "}";
-
-        query = connection.prepareTupleQuery(QueryLanguage.SPARQL, queryString);
-        try (TupleQueryResult result = query.evaluate()) {
-            for (BindingSet solution :
-                    result) {
-                String tId = solution.getValue("tId").stringValue();
-                String cnId = solution.getValue("cnId").stringValue();
-                String ceId = solution.getValue("ceId").stringValue();
-                System.out.println("tId = " + tId);
-                System.out.println("cnId = " + cnId);
-                System.out.println("ceId = " + ceId);
-                System.out.println();
-            }
-        }
+        objectMapper.writeValue(Paths.get("src/test/resources/json").toFile(), all);
         return this;
     }
 

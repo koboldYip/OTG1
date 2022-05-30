@@ -29,6 +29,7 @@ public class TestClass {
 
         JsonWriter jsonWriter = new JsonWriter();
         jsonWriter.parseCimRdfToJson("src/test/resources/asd");
+        System.out.println();
 
     }
 }
