@@ -19,9 +19,7 @@ import ru.mpei.cimmaintainer.dto.ConnectivityNode;
 import ru.mpei.cimmaintainer.dto.Element;
 import ru.mpei.cimmaintainer.dto.Terminal;
 
-import java.io.BufferedWriter;
 import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.nio.file.Paths;
 
 @Getter
@@ -61,7 +59,6 @@ public class JsonWriter {
                 "}";
 
         query = connection.prepareTupleQuery(QueryLanguage.SPARQL, queryString);
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/test/resources/json", false));
         try (TupleQueryResult result = query.evaluate()) {
             for (BindingSet solution :
                     result) {
