@@ -408,12 +408,6 @@
     <Declaration>
         <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
     </Declaration>
-    <Declaration>
-        <Class IRI="#DZT"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#DZT1"/>
-    </Declaration>
     <SubClassOf>
         <Class IRI="#Breaker"/>
         <Class IRI="#Device"/>
@@ -2325,10 +2319,6 @@
     <ClassAssertion>
         <Class IRI="#RelayProtection"/>
         <NamedIndividual IRI="#DZT"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#DZT"/>
-        <NamedIndividual IRI="#DZT1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#ProtectionPowerTransformer"/>
@@ -5717,16 +5707,6 @@
         <NamedIndividual IRI="#35kV"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isProtectionof"/>
-        <NamedIndividual IRI="#DZT"/>
-        <NamedIndividual IRI="#T1"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isProtectionof"/>
-        <NamedIndividual IRI="#DZT"/>
-        <NamedIndividual IRI="#T2"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isTypeBreakerof"/>
         <NamedIndividual IRI="#FeederBreaker"/>
         <NamedIndividual IRI="#Q101"/>
@@ -6029,22 +6009,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasProtection"/>
         <NamedIndividual IRI="#T1"/>
-        <NamedIndividual IRI="#DZT"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasProtection"/>
-        <NamedIndividual IRI="#T1"/>
         <NamedIndividual IRI="#OverloadProtection"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasVoltageLevel"/>
         <NamedIndividual IRI="#T1"/>
         <NamedIndividual IRI="#110kV"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasProtection"/>
-        <NamedIndividual IRI="#T2"/>
-        <NamedIndividual IRI="#DZT"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasProtection"/>
@@ -6922,42 +6892,6 @@
                 <Variable IRI="urn:swrl:var#otl"/>
                 <Variable IRI="urn:swrl:var#V"/>
             </BuiltInAtom>
-        </Head>
-    </DLSafeRule>
-    <DLSafeRule>
-        <Annotation>
-            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
-            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
-        </Annotation>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-            <Literal></Literal>
-        </Annotation>
-        <Annotation>
-            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-            <Literal>DZT</Literal>
-        </Annotation>
-        <Body>
-            <ClassAtom>
-                <Class IRI="#ThreeWindingPowerTransformerWithTapChanger"/>
-                <Variable IRI="#x"/>
-            </ClassAtom>
-            <DataPropertyAtom>
-                <DataProperty IRI="#hasApparentPower"/>
-                <Variable IRI="#x"/>
-                <Variable IRI="#b"/>
-            </DataPropertyAtom>
-            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual">
-                <Variable IRI="#b"/>
-                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">4.0</Literal>
-            </BuiltInAtom>
-        </Body>
-        <Head>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#hasProtection"/>
-                <Variable IRI="#x"/>
-                <NamedIndividual IRI="#DZT"/>
-            </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
     <DLSafeRule>

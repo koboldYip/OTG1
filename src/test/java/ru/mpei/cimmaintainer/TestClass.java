@@ -42,7 +42,7 @@ public class TestClass {
 
         SldToOWL sld = new SldToOWL();
 
-        sld.process("src/test/resources/substation.owl","src/test/resources/фчс");
+        sld.process("src/test/resources/OWL.owl","src/test/resources/фчс");
 
 
 
